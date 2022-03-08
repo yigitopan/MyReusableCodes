@@ -1,0 +1,59 @@
+
+<style>
+
+ .carousel-outer-container {
+  	background-image: url('{{ section.settings.review-bg | img_url: '512x' }}');
+  }
+  
+</style>
+
+
+          {% for block in section.blocks %}
+          			<img src="{{ block.settings.image | img_url: '300x' }}">
+          {% endfor%}
+
+
+
+
+
+<script>
+</script>
+
+
+{% schema %}
+{
+  "name": "NAME OF SECTION",
+  "settings": [
+    {
+      "id": "settingID",
+      "type": "settingType",
+      "label": "settingLabel"
+    }
+  ],
+
+  "blocks": [
+	{
+	  "type":"select",
+	  "name":"BlockName",
+	  "settings":[
+      	{
+		   "id":"image",
+		   "type":"image_picker",
+		   "label":"Author Image"
+	  	},
+      	{
+		   "id":"text-1",
+		   "type":"text",
+		   "label":"Title"
+	  	}
+	  ]
+	}
+  ],
+  "presets": [
+  	{
+	  "name": "PSE 28",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
